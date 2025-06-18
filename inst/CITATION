@@ -1,0 +1,16 @@
+citHeader("To cite TimescaleR in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "TimescaleR: Interface to TimescaleDB for Time Series Data Management",
+  author   = person("Saurabh", "Aggrawal", email = "saggrawal8@gmail.com"),
+  year     = "2025",
+  note     = "R package version 0.1.3",
+  url      = "https://github.com/saggrawal76/TimescaleR",
+  textVersion = paste(
+    "Saurabh Aggrawal (2025).",
+    "TimescaleR: Interface to TimescaleDB for Time Series Data Management.",
+    "R package version 0.1.3.",
+    "https://github.com/saggrawal76/TimescaleR"
+  )
+) 

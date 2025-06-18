@@ -1,0 +1,27 @@
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "dbname": "testuser",
+    "user": "testuser",
+    "password": "testpass",
+    "schema": "market_data",
+    "sslmode": "prefer",
+    "connect_timeout": 10
+  },
+  "hypertable": {
+    "default_chunk_interval": "1 day",
+    "default_compression_interval": "7 days",
+    "default_retention_interval": "1 year"
+  },
+  "continuous_aggregates": {
+    "default_refresh_interval": "1 hour",
+    "default_start_offset": "1 month",
+    "default_end_offset": "1 hour"
+  },
+  "maintenance": {
+    "vacuum_analyze_interval": "1 day",
+    "reindex_interval": "1 week",
+    "analyze_interval": "1 day"
+  }
+} 

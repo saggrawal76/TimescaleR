@@ -1,0 +1,44 @@
+Package: TimescaleR
+Title: Interface to TimescaleDB for Time Series Data Management
+Version: 0.1.3
+Authors@R: 
+    person(given = "Saurabh",
+           family = "Aggrawal",
+           role = c("aut", "cre"),
+           email = "saggrawal8@gmail.com",
+           comment = c(ORCID = "0009-0006-8316-7886"))
+Author: Saurabh Aggrawal [aut, cre]
+Maintainer: Saurabh Aggrawal <saggrawal8@gmail.com>
+Description: Provides an interface to TimescaleDB, a time-series database built 
+    on PostgreSQL. The package enables R users to efficiently store, query, 
+    analyze, and visualize time-series data. It includes functions for creating 
+    hypertables, executing time-bucketed queries, and leveraging TimescaleDB's 
+    specialized time-series functions. TimescaleDB is an open-source database 
+    designed to make SQL scalable for time-series data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.0)
+Imports:
+    DBI (>= 1.0.0),
+    RPostgres (>= 1.3.0),
+    data.table (>= 1.12.0),
+    dplyr (>= 1.0.0),
+    ggplot2 (>= 3.3.0),
+    jsonlite (>= 1.6.0),
+    lubridate (>= 1.7.0),
+    stringr (>= 1.4.0),
+    tidyr (>= 1.1.0),
+    utils,
+    magrittr (>= 1.5.0),
+    rlang (>= 0.4.0)
+Suggests:
+    roxygen2,
+    devtools,
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+RoxygenNote: 7.3.2
+URL: https://github.com/saggrawal76/TimescaleR
+BugReports: https://github.com/saggrawal76/TimescaleR/issues
+VignetteBuilder: knitr
