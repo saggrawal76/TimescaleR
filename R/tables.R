@@ -976,6 +976,7 @@ analyze_table <- function(table_name, verbose = FALSE, auto_reconnect = TRUE, de
 #'
 #' Retrieves a list of all TimescaleDB hypertables in the current database.
 #'
+#' @param conn Database connection object (optional, uses global connection if NULL)
 #' @param auto_reconnect Whether to attempt reconnection if the connection is lost (default: TRUE)
 #' @return Data frame with hypertable information
 #' @export

@@ -1,9 +1,10 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.git$
-^\.git/
+^\.git/.*$
 ^\.github$
 ^\.gitignore$
+\.git
 ^doc$
 ^Meta$
 ^.*\.Rcheck$
