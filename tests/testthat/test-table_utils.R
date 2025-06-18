@@ -1,6 +1,9 @@
 # Load required packages
-library(pacman)
-p_load(testthat, DBI, RPostgres, data.table, lubridate)
+library(testthat)
+library(DBI)
+library(RPostgres)
+library(data.table)
+library(lubridate)
 
 # Test configuration
 test_config <- list(

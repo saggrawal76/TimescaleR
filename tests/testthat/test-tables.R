@@ -1,7 +1,9 @@
 # Load required packages
-library(pacman)
-p_load(testthat, data.table, DBI, RPostgres)
-p_load(TimescaleR)
+library(testthat)
+library(data.table)
+library(DBI)
+library(RPostgres)
+library(TimescaleR)
 
 # Test configuration
 test_config <- list(

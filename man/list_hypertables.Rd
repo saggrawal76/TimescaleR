@@ -7,8 +7,6 @@
 list_hypertables(conn = NULL, auto_reconnect = TRUE)
 }
 \arguments{
-\item{conn}{Database connection object (optional, uses global connection if NULL)}
-
 \item{auto_reconnect}{Whether to attempt reconnection if the connection is lost (default: TRUE)}
 }
 \value{
@@ -32,4 +30,4 @@ init_connection(
 hypertables <- list_hypertables()
 print(hypertables)
 }
-} 
+}

@@ -114,6 +114,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Saurabh Aggrawal \email{saggrawal9@gmail.com} (\href{https://orcid.org/0009-0006-8316-7886}{ORCID})
+\strong{Maintainer}: Saurabh Aggrawal \email{saggrawal8@gmail.com} (\href{https://orcid.org/0009-0006-8316-7886}{ORCID})
 
 }

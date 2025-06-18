@@ -2,7 +2,7 @@
 % Please edit documentation in R/timescale.R
 \name{decompress_chunks}
 \alias{decompress_chunks}
-\title{Decompress chunks for a hypertable}
+\title{Decompress chunks in a hypertable}
 \usage{
 decompress_chunks(table_name, older_than, conn = NULL, debug = FALSE)
 }
@@ -19,7 +19,7 @@ decompress_chunks(table_name, older_than, conn = NULL, debug = FALSE)
 TRUE if successful
 }
 \description{
-Manually decompress chunks for a hypertable.
+Decompress chunks in a hypertable
 }
 \examples{
 \dontrun{
@@ -32,7 +32,6 @@ init_connection(
   pass = "testpass", 
   schema = "public"
 )
-
 # Using global connection with required arguments first
 decompress_chunks("sensor_data", "7 days")
 
@@ -40,4 +39,4 @@ decompress_chunks("sensor_data", "7 days")
 conn <- get_connection()
 decompress_chunks("sensor_data", "7 days", conn)
 }
-} 
+}
