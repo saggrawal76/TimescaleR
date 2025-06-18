@@ -748,28 +748,6 @@ get_table_size <- function(table_name, auto_reconnect = TRUE, debug = FALSE) {
   )
 }
 
-#' Convert date/time columns in a data.table
-#'
-#' Converts specified columns in a data.table to DATE or TIMESTAMP type.
-#'
-#' @param data A data.table object
-#' @param date_columns Vector of column names to convert to DATE type (optional)
-#' @param date_time_columns Vector of column names to convert to TIMESTAMP type (optional)
-#' @param debug Enable debug messages (optional, default FALSE)
-#' @return A data.table with converted date/time columns
-#' @export
-#' @examples
-#' \dontrun{
-#' data <- data.table(
-#'   date = as.Date("2024-01-01"),
-#'   datetime = as.POSIXct("2024-01-01 12:00:00")
-#' )
-#' converted <- convert_date_time_columns(data,
-#'   date_columns = "date",
-#'   date_time_columns = "datetime"
-#' )
-#' }
-
 
 #' Convert a regular table to a hypertable
 #'

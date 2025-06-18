@@ -30,6 +30,7 @@ Number of rows inserted
 Insert data into a table in batches
 }
 \examples{
+\dontrun{
 # Using global connection
 init_connection(
   host = "localhost", 
@@ -45,4 +46,5 @@ insert_data_to_table(table_name = "sensor_data", data = data)
 # Or with explicit connection
 conn <- get_connection()
 insert_data_to_table(conn, "sensor_data", data)
+}
 }

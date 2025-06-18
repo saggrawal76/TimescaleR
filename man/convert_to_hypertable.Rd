@@ -2,7 +2,7 @@
 % Please edit documentation in R/tables.R
 \name{convert_to_hypertable}
 \alias{convert_to_hypertable}
-\title{Convert date/time columns in a data.table}
+\title{Convert a regular table to a hypertable}
 \usage{
 convert_to_hypertable(
   table_name,
@@ -34,37 +34,15 @@ convert_to_hypertable(
 \item{auto_reconnect}{Whether to attempt reconnection if the connection is lost (default: TRUE)}
 
 \item{debug}{Enable verbose debug output (default: FALSE)}
-
-\item{data}{A data.table object}
-
-\item{date_columns}{Vector of column names to convert to DATE type (optional)}
-
-\item{date_time_columns}{Vector of column names to convert to TIMESTAMP type (optional)}
 }
 \value{
-A data.table with converted date/time columns
-
 TRUE if conversion was successful
 }
 \description{
-Converts specified columns in a data.table to DATE or TIMESTAMP type.
-}
-\examples{
-\dontrun{
-data <- data.table(
-  date = as.Date("2024-01-01"),
-  datetime = as.POSIXct("2024-01-01 12:00:00")
-)
-converted <- convert_date_time_columns(data,
-  date_columns = "date",
-  date_time_columns = "datetime"
-)
-}
-Convert a regular table to a hypertable
-
 Converts a regular PostgreSQL table to a TimescaleDB hypertable.
 A hypertable is a table that is automatically partitioned by time.
-
+}
+\examples{
 \dontrun{
 # Initialize connection
 init_connection(

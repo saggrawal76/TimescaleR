@@ -9,6 +9,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Using global connection
 #' init_connection(
 #'   host = "localhost", 
@@ -24,6 +25,7 @@
 #' # Or with explicit connection
 #' conn <- get_connection()
 #' insert_data_to_table(conn, "sensor_data", data)
+#' }
 insert_data_to_table <- function(conn = NULL, table_name, data, batch_size = 1000, debug = FALSE) {
   if (debug) cat("[DEBUG] Inserting data into table:", table_name, "\n")
   
