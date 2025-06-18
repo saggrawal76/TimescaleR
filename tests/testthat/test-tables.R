@@ -2,8 +2,15 @@
 library(testthat)
 library(data.table)
 library(DBI)
-library(RPostgres)
 library(TimescaleR)
+
+# Try to load RPostgres, skip all tests if not available
+rpostgres_available <- tryCatch({
+  library(RPostgres)
+  TRUE
+}, error = function(e) {
+  FALSE
+})
 
 # Test configuration
 test_config <- list(
@@ -16,6 +23,7 @@ test_config <- list(
 )
 
 test_that("create_table_from_data_table works correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Skip if database not available
   tryCatch(
     {
@@ -86,6 +94,7 @@ test_that("create_table_from_data_table works correctly", {
 })
 
 test_that("create_table_from_data_table handles errors correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Skip if database not available
   tryCatch(
     {
@@ -163,6 +172,7 @@ test_that("create_table_from_data_table handles errors correctly", {
 })
 
 test_that("append_data_table_to_table works correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Skip if database not available
   tryCatch(
     {
@@ -222,6 +232,7 @@ test_that("append_data_table_to_table works correctly", {
 })
 
 test_that("table operations handle errors correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Skip if database not available
   tryCatch(
     {

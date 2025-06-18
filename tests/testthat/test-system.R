@@ -1,8 +1,15 @@
 # Load required packages
 library(testthat)
 library(DBI)
-library(RPostgres)
 library(data.table)
+
+# Try to load RPostgres, skip all tests if not available
+rpostgres_available <- tryCatch({
+  library(RPostgres)
+  TRUE
+}, error = function(e) {
+  FALSE
+})
 
 # Test configuration
 test_config <- list(
@@ -16,6 +23,7 @@ test_config <- list(
 
 # Test if database is available
 test_that("database is available", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -38,6 +46,7 @@ test_that("database is available", {
 
 # Test maintenance functions
 test_that("maintenance functions work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -81,6 +90,7 @@ test_that("maintenance functions work correctly", {
 
 # Test backup and restore functions
 test_that("backup and restore functions work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -141,6 +151,7 @@ test_that("backup and restore functions work correctly", {
 
 # Test error handling
 test_that("system functions handle errors correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Test without connection
   if (TimescaleR::has_connection()) {
     TimescaleR::close_connection()

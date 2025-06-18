@@ -1,8 +1,15 @@
 # Load required packages
 library(testthat)
 library(DBI)
-library(RPostgres)
 library(data.table)
+
+# Try to load RPostgres, skip all tests if not available
+rpostgres_available <- tryCatch({
+  library(RPostgres)
+  TRUE
+}, error = function(e) {
+  FALSE
+})
 
 context("Visualization Tests")
 
@@ -17,6 +24,7 @@ test_config <- list(
 )
 
 test_that("visualization functions work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -107,6 +115,7 @@ test_that("visualization functions work correctly", {
 })
 
 test_that("visualization functions handle errors correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   # Test plot_timeseries input validation without database connection
   test_data <- data.frame(
     time = as.POSIXct(c("2024-01-01 12:00:00", "2024-01-01 13:00:00")),

@@ -1,8 +1,15 @@
 # Load required packages
 library(testthat)
 library(DBI)
-library(RPostgres)
 library(data.table)
+
+# Try to load RPostgres, skip all tests if not available
+rpostgres_available <- tryCatch({
+  library(RPostgres)
+  TRUE
+}, error = function(e) {
+  FALSE
+})
 
 context("TimescaleDB Tests")
 
@@ -17,6 +24,7 @@ test_config <- list(
 )
 
 test_that("hypertable operations work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -102,6 +110,7 @@ test_that("hypertable operations work correctly", {
 })
 
 test_that("continuous aggregates work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {

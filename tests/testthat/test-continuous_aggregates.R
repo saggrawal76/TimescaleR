@@ -1,8 +1,15 @@
 # Load required packages
 library(testthat)
 library(DBI)
-library(RPostgres)
 library(data.table)
+
+# Try to load RPostgres, skip all tests if not available
+rpostgres_available <- tryCatch({
+  library(RPostgres)
+  TRUE
+}, error = function(e) {
+  FALSE
+})
 
 # Test configuration
 test_config <- list(
@@ -16,6 +23,7 @@ test_config <- list(
 
 # Test if database is available
 test_that("database is available", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -38,6 +46,7 @@ test_that("database is available", {
 
 # Test continuous aggregate operations
 test_that("continuous aggregate operations work correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
@@ -112,6 +121,7 @@ test_that("continuous aggregate operations work correctly", {
 
 # Test error handling
 test_that("continuous aggregate functions handle errors correctly", {
+  skip_if_not(rpostgres_available, "RPostgres not available")
   skip_if_not(
     tryCatch(
       {
