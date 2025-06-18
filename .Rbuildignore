@@ -1,2 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git$
+^\.github$
+^\.gitignore$
 ^doc$
 ^Meta$
+^.*\.Rcheck$
+^\..*\.Rcheck$
+^README\.Rmd$
+^NEWS\.md$

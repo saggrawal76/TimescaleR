@@ -5,10 +5,8 @@ Authors@R:
     person(given = "Saurabh",
            family = "Aggrawal",
            role = c("aut", "cre"),
-           email = "saggrawal9@gmail.com",
+           email = "saggrawal8@gmail.com",
            comment = c(ORCID = "0009-0006-8316-7886"))
-Author: Saurabh Aggrawal [aut, cre]
-Maintainer: Saurabh Aggrawal <saggrawal9@gmail.com>
 Description: Provides an interface to TimescaleDB, a time-series database built 
     on PostgreSQL. The package enables R users to efficiently store, query, 
     analyze, and visualize time-series data. It includes functions for creating 
