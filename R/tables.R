@@ -992,7 +992,7 @@ analyze_table <- function(table_name, verbose = FALSE, auto_reconnect = TRUE, de
 #' )
 #' 
 #' # List all hypertables
-#' hypertables <- list_hypertables()
+#' hypertables <- list_hypertables(conn = conn)
 #' print(hypertables)
 #' }
 list_hypertables <- function(conn = NULL, auto_reconnect = TRUE) {

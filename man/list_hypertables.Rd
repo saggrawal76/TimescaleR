@@ -29,7 +29,7 @@ init_connection(
 )
 
 # List all hypertables
-hypertables <- list_hypertables()
+hypertables <- list_hypertables(conn = conn)
 print(hypertables)
 }
 }
